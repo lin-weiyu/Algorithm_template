@@ -1,0 +1,1 @@
+{"name":"Local: 主席树(可持久化线段树)","url":"c:\\Users\\28941\\Desktop\\c文件\\算法案例\\主席树(可持久化线段树).cpp","tests":[{"id":1725333038167,"input":"6 3\n5 6 4 3 2 1\n1 3 3\n1 4 1\n1 6 2","output":""}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"c:\\Users\\28941\\Desktop\\c文件\\算法案例\\主席树(可持久化线段树).cpp","group":"local","local":true}
