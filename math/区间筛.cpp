@@ -1,7 +1,8 @@
-#include <bits/stdc++.h>
+#include <iostream>
+#include <vector>
 using namespace std;
 typedef long long ll;
-const int MAXN = 1e5;
+const int MAXN = 3e6 + 5;
 bool isPrime[MAXN];	//根据isPrime[i]判断i+a是不是质数，isPrime[i-a]=true 表示i是素数（下标偏移了a）
 bool isSqrtPrime[MAXN];	//根据isSqrtPrime[i]判断i是不是质数
 vector<int> prime;
@@ -30,8 +31,6 @@ void SegmentSieve(ll a, ll b)	//对区间[a,b)进行筛选
 }
 
 
-typedef long long ll;
-const int MAXN = 1e6 + 5;
 vector<int> primes;
 void segment_sieve(ll a, ll b) {
     vector<bool> is_prime_small(sqrt(b) + 1, true); // 筛[2, sqrt(b)]
@@ -54,20 +53,19 @@ void segment_sieve(ll a, ll b) {
     for (ll i = a; i < b; i++) 
         if (is_prime[i - a]) primes.push_back(i);
 }
-int main(){
-    segment_sieve(1000000000, 1001000000);
-    for (auto v : primes){
-        cout << v << " ";
-    }
-    return 0;
-}
-
-
 
 int main(){
-    SegmentSieve(100, 10000);
+    segment_sieve(1, 10);
+    //SegmentSieve(1000000000, 1002000000);
+    ll sumk1 = 0, sumk2 = 0;
     for (auto v : prime){
-        cout << v << " ";
+        // cout << v << " ";
+        sumk1 += v;
     }
+    for (auto v : primes){
+        sumk2 += v;
+        cout << v << endl;
+    }
+    cout << sumk1 << " " << sumk2 << endl;
     return 0;
 }
