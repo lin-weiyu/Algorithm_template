@@ -1,6 +1,6 @@
 # run.sh
 ```cpp
-#!bash/bin
+#!/bin/bash
 g++ input.cpp -o input
 g++ hacked.cpp -o hacked 
 g++ std.cpp -o std
@@ -21,6 +21,31 @@ do
 done
 ```
 
+
+```cpp
+@echo off
+g++ input.cpp -o input.exe
+g++ hacked.cpp -o hacked.exe
+g++ std.cpp -o std.exe
+
+set cnt=1
+
+:loop
+echo %cnt%th hack
+set /a cnt+=1
+
+input.exe > data.in
+hacked.exe < data.in > data.result
+std.exe < data.in > data.out
+
+fc data.out data.result > nul
+if errorlevel 1 (
+    echo hack success
+    pause
+    exit /b
+)
+goto loop
+```
 
 
 
