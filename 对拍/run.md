@@ -31,6 +31,7 @@ g++ std.cpp -o std.exe
 set cnt=1
 
 :loop
+cls
 echo %cnt%th hack
 set /a cnt+=1
 
